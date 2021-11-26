@@ -1,0 +1,37 @@
+This README file contains information on the contents of the meta-printing layer.
+
+Please see the corresponding sections below for details.
+
+Dependencies
+============
+
+  URI: git://git.yoctoproject.org/poky
+  branch: dunfell
+
+  URI: git://git.openembedded.org/meta-openembedded 
+  branch: dunfell
+
+Patches
+=======
+
+Please submit any patches against the meta-printing layer to the maintainer:
+
+Maintainer: Claus Stovgaard <claus.stovgaard@gmail.com>
+
+Table of Contents
+=================
+
+  I. Adding the meta-printing layer to your build
+ II. Misc
+
+
+I. Adding the meta-printing layer to your build
+=================================================
+
+Run 'bitbake-layers add-layer meta-printing'
+
+II. Misc
+========
+
+Is currently used for building cups and gutenprint in yocto.
+Tested with qemuarm64 and qemux86-64 using dunfell.
