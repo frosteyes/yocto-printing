@@ -27,11 +27,6 @@ EXTRA_OECONF = "--without-doc --disable-test --disable-nls PERL=/usr/bin/perl"
 # Rather it has a autogen.sh in its root folder. We just use it
 # together with adapting for cross compilation
 do_configure() {
-    # Disable the local build check_duplicate_printers.test.
-    # We can't run it when it is cross compiled, and also it
-    # should properly be disabled by --disable-test to OECONF
-    sed -i 's/$(AM_TESTS_ENVIRONMENT) .\/check_duplicate_printers.test//' ${S}/src/xml/printers/Makefile.am
-
     # Disable the xmli18n-tmp.h rule - 
     # It depend on the local build extract-strings, we are not able to run this
     # So we are using the xmli18n-tmp.h created by gutenprint-native
@@ -50,3 +45,4 @@ FILES_${PN} += "${datadir}/cups/*"
 # Install in /etc/cups when RPM needs DIRFILES to not conflict
 # https://stackoverflow.com/questions/44762430/why-do-i-get-etc-cups-conflicts-between-attempted-installs-in-yocto
 DIRFILES = "1"
+

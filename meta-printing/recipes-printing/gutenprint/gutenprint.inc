@@ -17,7 +17,8 @@ HOMEPAGE = "http://gimp-print.sourceforge.net/"
 LICENSE = "GPLv2"
 
 SRC_URI = "git://git.code.sf.net/p/gimp-print/source;protocol=https"
-SRCREV = "4543297967c3c77fa411a819149a02980f576dc6"
+SRCREV = "8e47dc44dd7738302ba9e8fbc1f918461fed0236"
 S = "${WORKDIR}/git"
 
 LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=59530bdf33659b29e73d4adb9f9f6552"
+
