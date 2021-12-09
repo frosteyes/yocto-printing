@@ -4,12 +4,8 @@ This repository provides an example for cross compilation cups, cups-filters and
 gutenprint, and uses core-image-sato / core-image-minimal for a virtual x86-64
 and ARM64 qemu machine to test it.
 
-It is designed around poky using the dunfell LTS branch.
-
 Before trying to use this, please see yocto project quick build for setting up
 a native Linux host for building the image.
-
-https://docs.yoctoproject.org/3.1.11/brief-yoctoprojectqs/brief-yoctoprojectqs.html
 
 Below guide expect that your host machine is setup for yocto build.
 

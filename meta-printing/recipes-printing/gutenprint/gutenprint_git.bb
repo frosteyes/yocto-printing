@@ -12,14 +12,14 @@
 
 require gutenprint.inc
 
-inherit autotools-brokensep 
+inherit autotools-brokensep pkgconfig 
 
 DEPENDS += "cups gutenprint-native"
 
 # cups-genppdupdate depend on perl
 # We also set the path to PERL as else the version in hosttools would be used
 # with full path
-RDEPENDS_${PN} = "perl "
+RDEPENDS:${PN} = "perl "
 
 EXTRA_OECONF = "--without-doc --disable-test --disable-nls PERL=/usr/bin/perl"
 
@@ -40,7 +40,7 @@ do_configure() {
 
 # gutenprint install the calibrate.ppm and net.sf.gimp-print.usb-quirks in
 # /usr/share/cups
-FILES_${PN} += "${datadir}/cups/*"
+FILES:${PN} += "${datadir}/cups/*"
 
 # Install in /etc/cups when RPM needs DIRFILES to not conflict
 # https://stackoverflow.com/questions/44762430/why-do-i-get-etc-cups-conflicts-between-attempted-installs-in-yocto

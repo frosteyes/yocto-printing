@@ -13,7 +13,10 @@
 
 require gutenprint.inc
 
-inherit autotools-brokensep native
+# We could consider switching to BBCLASSEXTEND native instead of inherit
+# Using devtool with this results in warning, as devtool append externalsrc to 
+# inheritance, making native not being inherited last.
+inherit autotools-brokensep pkgconfig native
 
 SECTION = "libs"
 
@@ -38,3 +41,4 @@ do_install() {
     install -d ${D}${datadir}/gutenprint/
     install -m644 ${B}/src/xml/xmli18n-tmp.h ${D}${datadir}/gutenprint/
 }
+
