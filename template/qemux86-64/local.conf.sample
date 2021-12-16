@@ -143,6 +143,7 @@ EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
 
 # Add printing to the image
 CORE_IMAGE_EXTRA_INSTALL += "cups cups-doc cups-filters gutenprint"
+CORE_IMAGE_EXTRA_INSTALL += "system-config-printer"
 
 #
 # Additional image features
