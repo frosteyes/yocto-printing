@@ -4,8 +4,7 @@
 # We don't depend on cups as this is for generating the string header.
 # 
 # Copyright (c) Ambu A/S - All rights reserved
-# gutenprint is GPLv2 or later - we use it as GPLv2
-# This recipe itself is MIT licensed
+# SPDX-License-Identifier: MIT
 #
 # Author(s)
 #   clst@ambu.com (Claus Stovgaard)

@@ -22,16 +22,13 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171d
 DEPENDS = "virtual/kernel udev"
 PROVIDES = "virtual/usbip-tools"
 
-inherit kernelsrc autotools
+inherit kernelsrc autotools-brokensep
 
 do_configure[depends] += "virtual/kernel:do_shared_workdir"
 
 # We need to set S, for not being set to STAGING_KERNEL_DIR, and by that 
 # be wiped when we prune dest below. We just set it to usbip-tools-1.0
-# Next the autotools is designed so it is easist to run in the source folder
-# instead of a separate build folder 
 S = "${WORKDIR}/${BP}"
-B = "${S}"
 
 # Copy the source files from KERNEL/tools/usb/usbip to ${S}
 do_configure[prefuncs] += "copy_usbip_source_from_kernel"

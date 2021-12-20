@@ -5,8 +5,7 @@
 # So we set the SRC_URI and SRCREV here.
 # 
 # Copyright (c) Ambu A/S - All rights reserved
-# gutenprint is GPLv2 or later - we use it as GPLv2
-# This recipe itself is MIT licensed
+# SPDX-License-Identifier: MIT
 #
 # Author(s)
 #   clst@ambu.com (Claus Stovgaard)
