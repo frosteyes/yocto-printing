@@ -14,7 +14,9 @@ DESCRIPTION = "system-config-printer - tool for handling printers"
 HOMEPAGE = "https://github.com/OpenPrinting/system-config-printer"
 LICENSE = "GPLv2+"
 
-SRC_URI = "git://github.com/OpenPrinting/system-config-printer.git;protocol=https;branch=master"
+SRC_URI = "git://github.com/OpenPrinting/system-config-printer.git;protocol=https;branch=master \
+           file://0001-Add-gutenprint-to-udev-handling.patch \
+           "
 SRCREV = "2c09ddfb25713e38f7a9810193339c7c65c5f2ea"
 S = "${WORKDIR}/git"
 
@@ -39,10 +41,12 @@ RDEPENDS:${PN} += " \
     python3-pycairo \
     python3-pycups \
     python3-pygobject \
+    python3-syslog \
 "
 
 # Disable generation with xmlto - no need to depend on it
-EXTRA_OECONF = "--without-xmlto"
+EXTRA_OECONF += "--with-udev-rules \
+                 --without-xmlto"
 
 # system-config-printer does not have a configure file in its root folder.
 # Rather it has a bootstrap script running the autoconf tools
@@ -55,4 +59,5 @@ do_configure() {
 FILES:${PN} += "${PYTHON_SITEPACKAGES_DIR}/*"
 # dbus-1 and metainfo
 FILES:${PN} += "${datadir}/*"
-
+# configure-printers@.service
+FILES:${PN} += "${systemd_system_unitdir}/*"

@@ -1,0 +1,25 @@
+From b59a9a1a359807f03181591aade446eae7fe164e Mon Sep 17 00:00:00 2001
+From: Claus Stovgaard <clst@ambu.com>
+Date: Mon, 3 Jan 2022 09:41:44 +0100
+Subject: [PATCH] Add gutenprint to udev handling
+
+Extend allowed device_uri to include gutenprint53+usb for handling
+printers where gutenprint provide driver
+
+Signed-off-by: Claus Stovgaard <clst@ambu.com>
+---
+ udev/udev-configure-printer.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/udev/udev-configure-printer.c b/udev/udev-configure-printer.c
+index fd158b09..a4e199b7 100644
+--- a/udev/udev-configure-printer.c
++++ b/udev/udev-configure-printer.c
+@@ -169,6 +169,7 @@ struct device_id
+ static const char *device_uri_types[] =
+ {
+   "hp",
++  "gutenprint53+usb",
+   "usb",
+ };
+ 
