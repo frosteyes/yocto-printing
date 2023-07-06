@@ -1,2 +1,5 @@
 # Default yocto build folder
 build*
+
+# VS code temp files
+.vscode-ctags.next
