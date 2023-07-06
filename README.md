@@ -13,8 +13,6 @@ Backgroup
 ---------------
 This repo is provided as is, in the hope that i can a help for others needing to work
 with printing support in yocto.
-The hope is that gutenprint can be upstreamed to meta-openembedded or similar so
-it is available for all.
 All of the recipes in this git repo is released under MIT.
 
 Getting Started
@@ -25,12 +23,7 @@ Getting Started
 
 **2.  Setup yocto.**
 
-Source the setup script. Optional select a build folder. If no build folder is 
-selected a standard folder named *build* is created. Select target x86-64 
-*setup_qemux86-64* or *setup_qemuarm64*:
-
-    $ cd yocto-printing
-    $ source setup_qemuarm64 build_arm64
+Copy the template to the build folder and source oe-init-build-env
 
 After you have sourced the setup, please look into the *conf/local.conf* file.
 Specifically the variables **DL_DIR** and **SSTATE_DIR** is relevant to save
